@@ -42,13 +42,13 @@ if __name__ == "__main__":
 
     # intersection area  is x range of intersection multiplied by y range
 
-    area_intersection = abs(
+    area_intersection = (
         (get_min(rect1.rl.x, rect2.rl.x) - get_max(rect1.lh.x, rect2.lh.x))  # x range
         *
         (get_min(rect1.lh.y, rect2.lh.y) - get_max(rect1.rl.y, rect2.rl.y)))  # y range
 
     total_area = sum_area - area_intersection
-
-    print(area_intersection)
-
-    print(total_area)
+    if total_area>sum_area:
+        print(sum_area)
+    else:
+        print(total_area)
